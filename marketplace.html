@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Marketplace</h2>
+    <div class="mb-3">
+        <a href="{{ url_for('views.add_product') }}" class="btn btn-primary">Add Product</a>
+    </div>
+    <div class="row">
+        {% if products %}
+            {% for product in products %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    
+                    <img src="{{ url_for('static', filename='uploads/' +product.image) }}" class="card-img-top" alt="Product Image">
+
+                    <div class="card-body">
+                        <h5 class="card-title">${{ product.selling_price | round(2) }}</h5>
+                        <p class="card-text">Buy Price: ${{ product.buy_price | round(2) }}<br>
+                        Time Used: {{ product.time_used }} months<br>
+                        Rating: {{ '★' * product.rating }}{{ '☆' * (5 - product.rating) }}<br>
+                        Contact: {{ product.contact_info }}</p>
+                        
+                        <form action="{{ url_for('views.delete_product', product_id=product.id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to remove this product?');">
+                            <button type="submit" class="btn btn-danger">Remove</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No products available in the marketplace.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

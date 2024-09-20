@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Carpooling{% endblock %}
+
+{% block content %}
+    <h2>Add Carpool Info</h2>
+    <form action="{{ url_for('views.carpool') }}" method="post">
+        <label for="destination">Destination:</label><br>
+        <input type="text" id="destination" name="destination" required><br>
+        
+        <label for="date_time">Date and Time:</label><br>
+        <input type="datetime-local" id="date_time" name="date_time" required><br>
+        
+        <label for="contact_info">Contact Info:</label><br>
+        <input type="text" id="contact_info" name="contact_info" required><br>
+        
+        <label for="vehicle_type">Vehicle Type (Seaters):</label><br>
+        <input type="text" id="vehicle_type" name="vehicle_type" required><br>
+        
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" name="price" required><br>
+        
+        <label for="total_members_needed">Total Members Needed:</label><br>
+        <input type="number" id="total_members_needed" name="total_members_needed" required><br>
+        
+        <input type="submit" value="Add Carpool">
+    </form>
+
+    <h2>Available Carpools</h2>
+    <ul>
+        {% for carpool in carpools %}
+            <li>
+                Destination: {{ carpool.destination }},
+                Date and Time: {{ carpool.date_time }},
+                Contact: {{ carpool.contact_info }},
+                Vehicle Type: {{ carpool.vehicle_type }},
+                Price: {{ carpool.price }},
+                Total Members Needed: {{ carpool.total_members_needed }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
