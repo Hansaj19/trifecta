@@ -1,0 +1,104 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #9C27B0, #3F51B5);
+    color: #333;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the form */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Form Styles */
+.bg-white {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+    border-radius: 0.75rem;
+}
+
+.bg-opacity-20 {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.bg-purple-600 {
+    background-color: #9C27B0;
+}
+
+.bg-purple-700:hover {
+    background-color: #7B1FA2;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-gray-200 {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.mt-6, .mb-6, .p-4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+
+.focus\:ring-2 {
+    outline: none;
+    box-shadow: 0 0 0 2px #9C27B0;
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+/* Button Styles */
+button {
+    background-color: #9C27B0;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7B1FA2;
+}
+
+.btn-outline-primary {
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .bg-white {
+        padding: 3rem;
+    }
+}

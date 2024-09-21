@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinFlip - Financial Education Resources</title>
+    <link rel="stylesheet" href="/website/static/css/fe.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/website/static/fe.js" defer></script>
+</head>
+<body class="bg-gradient-to-br from-purple-400 to-indigo-600 min-h-screen font-sans text-gray-900">
+    <div x-data="{ open: false }">
+        <nav class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg fixed w-full z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="#" class="text-white text-2xl font-bold">FinFlip</a>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#" class="text-gray-300 hover:bg-white hover:bg-opacity-10 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="#" class="text-gray-300 hover:bg-white hover:bg-opacity-10 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                            <a href="#" class="text-gray-300 hover:bg-white hover:bg-opacity-10 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                    <div class="-mr-2 flex md:hidden">
+                        <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white hover:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 mt-16">
+            <div class="px-4 py-6 sm:px-0">
+                <div class="flex flex-col md:flex-row items-center justify-center">
+                    <div class="w-full md:w-1/2 p-8">
+                        <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-8 rounded-2xl shadow-xl">
+                            <h2 class="text-3xl font-bold mb-6 text-white">Financial Education Resources</h2>
+                            <p class="text-gray-200">Explore various financial aid sites, tools, coupons, and discounts:</p>
+                            <h3 class="text-2xl font-bold mt-4 text-white">Financial Aid Sites</h3>
+                            <ul class="list-disc list-inside text-gray-200">
+                                <li><a href="https://www.studentaid.gov/" class="text-purple-300 hover:text-white" target="_blank">Federal Student Aid</a></li>
+                                <li><a href="https://www.fastweb.com/" class="text-purple-300 hover:text-white" target="_blank">Fastweb</a></li>
+                                <li><a href="https://www.scholarships.com/" class="text-purple-300 hover:text-white" target="_blank">Scholarships.com</a></li>
+                            </ul>
+                            <h3 class="text-2xl font-bold mt-4 text-white">Financial Tools</h3>
+                            <ul class="list-disc list-inside text-gray-200">
+                                <li><a href="https://www.mint.com/" class="text-purple-300 hover:text-white" target="_blank">Mint - Budgeting Tool</a></li>
+                                <li><a href="https://www.creditkarma.com/" class="text-purple-300 hover:text-white" target="_blank">Credit Karma - Credit Monitoring</a></li>
+                            </ul>
+                            <h3 class="text-2xl font-bold mt-4 text-white">Coupons and Discounts</h3>
+                            <ul class="list-disc list-inside text-gray-200">
+                                <li><a href="https://www.retailmenot.com/" class="text-purple-300 hover:text-white" target="_blank">RetailMeNot</a></li>
+                                <li><a href="https://www.coupons.com/" class="text-purple-300 hover:text-white" target="_blank">Coupons.com</a></li>
+                                <li><a href="https://www.groupon.com/" class="text-purple-300 hover:text-white" target="_blank">Groupon</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="image-section">
+                        <img src="{{ url_for('static', filename='image/gif2.gif') }}" alt="Students managing finances" class="hero-image">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+{% endblock %}

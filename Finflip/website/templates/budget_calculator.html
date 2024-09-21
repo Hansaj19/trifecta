@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Budget Calculator</h2>
+    <p>Use this calculator to create your budget and track your expenses.</p>
+    
+    <form action="{{ url_for('views.track_budget') }}" method="post">
+        <div class="mb-3">
+            <label for="monthly_budget" class="form-label">Enter Your Monthly Budget:</label>
+            <input type="number" id="monthly_budget" name="monthly_budget" class="form-control" required>
+        </div>
+
+        <h4>Expenses</h4>
+        <div class="mb-3">
+            <label for="expenses" class="form-label">Enter Your Monthly Expenses:</label>
+            <textarea id="expenses" name="expenses" class="form-control" placeholder="e.g., Rent, Utilities, Groceries, etc." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Calculate</button>
+    </form>
+
+    {% if budget %}
+    <hr>
+    <h3>Your Budget Summary</h3>
+    <p>Monthly Budget: ${{ budget.monthly_budget }}</p>
+    <p>Total Expenses: ${{ total_expenses }}</p>
+    <p>Remaining Balance: ${{ budget.monthly_budget - total_expenses }}</p>
+    {% endif %}
+</div>
+{% endblock %}

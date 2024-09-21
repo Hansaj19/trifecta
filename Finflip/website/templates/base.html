@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinFlip - Flipping the Script on Financial Stress</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- Global Custom CSS -->
+    <link rel="stylesheet" href="/website/static/css/styles.css">
+
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+        }
+        .navbar {
+            background-color: #212529; /* Dark background */
+        }
+        .navbar a {
+            color: #ffffff; /* White text */
+        }
+        .navbar a:hover {
+            color: #adb5bd; /* Light gray on hover */
+        }
+        .footer {
+            background-color: #212529; /* Dark footer */
+            color: #ffffff; /* White text */
+            padding: 1rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('views.home') }}">FinFlip</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('views.features') }}">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('views.marketplace') }}">Resale Marketplace</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('views.carpool') }}">Carpooling</a>
+                    </li>
+                     <!-- New Track Bud Link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('views.track_budget') }}">Track Bud</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('views.financial_education') }}">Financial Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('views.about') }}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('views.contact') }}">Contact</a>
+                    </li>
+                
+                </ul>
+
+                <!-- Right Aligned Links for Login, Signup, and Logout -->
+                <ul class="navbar-nav ms-auto">
+                    {% if not g.user %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('auth.signup') }}">Signup</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="container mt-3">
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        {% block content %}
+        <!-- Page-specific content will go here -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 FinFlip. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (with Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

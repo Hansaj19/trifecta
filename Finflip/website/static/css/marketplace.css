@@ -1,0 +1,161 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #9C27B0, #3F51B5);
+    color: #333;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: none;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Main Content Styles */
+main {
+    padding-top: 5rem; /* Adjust for navigation height */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.marketplace-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+/* Card Styles */
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    max-width: 300px; /* Set max width for cards */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.card-text {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0.5rem 0;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #9C27B0;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #7B1FA2;
+}
+
+.btn-danger {
+    background-color: #e3342f;
+}
+
+.btn-danger:hover {
+    background-color: #cc1f1a;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .card {
+        width: 30%; /* Set width for larger screens */
+        margin: 1rem;
+    }
+}
+
+/* Miscellaneous */
+h2, h3 {
+    margin-top: 20px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* Additional Styles for No Products Message */
+.no-products {
+    color: white;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}

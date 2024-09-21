@@ -1,0 +1,277 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #9C27B0, #3F51B5);
+    color: #333;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation Styles */
+  nav {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+  }
+  
+  .logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  .nav-profile {
+    display: none;
+  }
+  
+  .profile-btn {
+    background-color: white;
+    color: #9C27B0;
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .profile-btn:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .profile-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .toggle-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .mobile-menu {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+  }
+  
+  .mobile-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0;
+  }
+  
+  .mobile-profile {
+    margin-top: 1rem;
+  }
+  
+  /* Main Content Styles */
+  main {
+    padding-top: 5rem;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-section {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 2rem;
+  }
+  
+  .login-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #9C27B0;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+  
+  .signin-btn {
+    background-color: #9C27B0;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .signin-btn:hover {
+    background-color: #7B1FA2;
+  }
+  
+  .forgot-password {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .forgot-password:hover {
+    color: white;
+  }
+  
+  .image-section {
+    display: none;
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .password-input-group {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .toggle-password:focus {
+    outline: none;
+  }
+  
+  .show-password {
+    color: #9C27B0;
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 768px) {
+    .nav-links.desktop {
+        display: flex;
+    }
+  
+    .nav-profile.desktop {
+        display: block;
+    }
+  
+    .nav-toggle {
+        display: none;
+    }
+  
+    .content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+  
+    .login-section {
+        width: 45%;
+        margin-bottom: 0;
+    }
+  
+    .image-section {
+        display: block;
+        width: 45%;
+    }
+  }
+h2, h3 {
+    margin-top: 20px;
+}
+
+ul {
+    padding-left: 20px;
+}
